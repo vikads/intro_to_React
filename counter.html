@@ -34,6 +34,12 @@
           })
         }
 
+        //this.state object contains a number property.
+        //this.state.number is thus updated with setState,
+        //specifically being increased (+1) or decreased (-1)
+        //based on which function/ button is invoked, either increment or decrement.
+        //Since the program starts at week 1, we use Math.max() so that it does not go below 1.
+
         render() {
           return (
             <div>
