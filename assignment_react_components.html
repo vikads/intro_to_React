@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
 
@@ -16,14 +16,36 @@
 
     <div id="root"></div>
     <script type="text/babel">
+
       class HelloMessage extends React.Component {
+
+        constructor(props) {
+          super(props);
+            this.state = {
+              number: 15 //my weeks in Bloc
+            }
+        }
+
         render () {
-          return <div><h1>Hello {this.props.name}</h1></div>;
+          return (
+            <div>
+              <img src={this.props.image} alt="Smiley face"/>
+              <h1>Hello {this.props.name}</h1>
+                <h3>Current week in Bloc:{this.state.number}</h3>
+
+            </div>
+          );
         }
       }
 
+      const info = {
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png",
+      }
+
         ReactDOM.render(
-          <HelloMessage name="Vika" />, document.getElementById('root')
+          <HelloMessage
+            name="Vika"
+            image={info.image} />, document.getElementById('root')
         );
 
     </script>
